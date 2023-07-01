@@ -1,0 +1,17 @@
+% Renew section command for resume section
+\renewenvironment{section}[1]{
+    % \vspace{-0.25em}
+    \phantomsection
+    \addcontentsline{toc}{section}{#1}
+    \medskip
+    {\color{textColor}\large\bfseries\MakeUppercase{#1}}
+    \medskip
+    {\color{primaryColor}\hrule}
+    % \textcolor{primaryColor}{ \rule{0.15\textwidth}{2pt}} 
+    \begin{list}{}{
+        \setlength{\leftmargin}{1.5em}
+    }
+    \item[]
+}{
+    \end{list}
+}

@@ -1,0 +1,20 @@
+% Define the resume header
+\newcommand{\resumeheader}[6]{
+    % \phantomsection
+    % \addcontentsline{toc}{chapter}{\@name}
+    \begin{tabularx}{\textwidth}{Xr}{
+        \begin{tabular}[c]{l}
+            \fontsize{35}{45}\selectfont{\color{primaryColor}{\textbf{\@name}}}
+            \ifx\empty\@title\empty\else
+                \\ \textit{\small\@title}
+            \fi
+       \end{tabular}
+    } & {
+        \begin{tabular}[c]{l@{\hspace{1em}}l}
+            \entry{\small#4}{\small#1}
+            \entry{\small#5}{\small#2}
+            \entry{\small#6}{\small#3}
+        \end{tabular}
+    }
+    \end{tabularx}
+}

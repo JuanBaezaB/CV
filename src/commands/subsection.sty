@@ -1,0 +1,22 @@
+% Renew subsection command for resume subsections
+% All arguments are compulsory
+% #1: Name, #2: Description, #3: Time Period, #4: Location
+\renewenvironment{subsection}[5]{
+    \phantomsection
+    \addcontentsline{toc}{subsection}{#1}
+    \textbf{#1} \hfill \textit{#3} \newline
+    {\color{primaryColor}\textbf{#2}} \hfill \textit{#4}
+    \smallskip
+    \if\relax\detokenize{#5}\relax
+        % La lista está vacía, no hacer nada
+    \else
+        \begin{list}{$\vbullet$}{
+        \leftmargin=2em
+        }
+        \itemsep -0.5em \vspace{-0.75em}
+        {#5}
+        \end{list}
+   
+    \fi
+    \vspace{0.25em}
+}

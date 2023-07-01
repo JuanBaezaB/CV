@@ -1,0 +1,12 @@
+% Define new sectiontable command, which makes a section with a table
+% All arguments are compulsory
+% #1: Name of the section, #2: Body of the section
+\newcommand{\sectiontable}[2]{
+    \begin{section}{#1}
+        \begin{adjustwidth}{0.0in}{0.1in}
+            \begin{tabularx}{\linewidth}{@{} >{\bfseries}l @{\hspace{5ex}} X @{}}
+                #2
+            \end{tabularx}
+        \end{adjustwidth}
+    \end{section}
+}
